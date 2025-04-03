@@ -320,11 +320,146 @@
 })();
 </script>
     <!-- 顶部背景 -->
-    <div class="header">
-        <h1>山重水复疑无路，柳暗花明又一村。</h1>
-        <h2>嗨~欢迎光临彭程的个人网站o(*￣▽￣*)ブ</h2>
+    <div class="welcome-container">
+    <div class="welcome-content">
+        <h1 class="welcome-title animate__animated animate__fadeInDown">
+                               嗨~欢迎光临彭程的个人网站
+            <span class="welcome-emoji" role="img" aria-label="微笑">😊</span>
+        </h1>
+        <div class="poetic-section animate__animated animate__fadeInUp animate__delay-1s">
+            <div class="decorative-line"></div>
+            <p class="poetic-quote">
+                相逢何必曾相识
+            </p>
+            <div class="decorative-line"></div>
+        </div>
     </div>
+    
+</div>
 
+<style>
+/* ===== 新版欢迎语样式 ===== */
+
+.welcome-container {
+    position: relative; /* 建立新的定位上下文 */
+    z-index: 1; /* 确保内容在星空上方 */
+    padding: 100px 20px 60px;
+    background: transparent; /* 关键修改：移除白色背景 */
+}
+
+.welcome-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    background: transparent/* 半透明背景 */
+    
+    
+    
+    
+}
+
+.welcome-title {
+    
+    position: absolute;  /* 绝对定位 */
+    top: 50%;          /* 垂直定位起点 */
+    left: 50%;         /* 水平定位起点 */
+    transform: translate(-50%, -50%); /* 自身尺寸回退 */
+    text-align: center; /* 内部文字居中 */
+
+    font-size: 2.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    margin: 0 auto 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+
+    text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+}
+
+.welcome-emoji {
+    display: inline-block;
+    animation: emojiFloat 2s ease-in-out infinite;
+    margin-left: 12px;
+}
+
+.poetic-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.decorative-line {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(52,152,219,0.3) 50%, 
+        transparent 100%);
+}
+
+.poetic-quote {
+    font-size: 1.5rem;
+    color: #95a5a6;
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
+    font-family: 'STXingkai', 'STKaiti', cursive;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+/* 悬浮互动效果 */
+.poetic-quote:hover {
+    color: #7f8c8d;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transform: scale(1.02);
+}
+
+/* 自定义动画 */
+@keyframes emojiFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    33% { transform: translateY(-6px) rotate(5deg); }
+    66% { transform: translateY(4px) rotate(-3deg); }
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+    .welcome-title {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+    
+    .poetic-quote {
+        font-size: 1.2rem;
+        padding: 0 15px;
+    }
+    
+    .decorative-line {
+        width: 40px;
+    }
+    
+    .poetic-section {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-container {
+        padding: 60px 15px 40px;
+    }
+    
+    .welcome-title {
+        font-size: 1.6rem;
+    }
+    
+    .poetic-quote {
+        font-size: 1rem;
+    }
+}
+</style>
     <!-- 导航按钮 -->
     <div class="nav-container">
         <button class="nav-btn" onclick="toggleContent('profile')">自我介绍</button>
